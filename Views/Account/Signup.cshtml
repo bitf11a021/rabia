@@ -15,23 +15,14 @@
 	<ul>
 		<li><a href="/Home/Index">Home</a></li>
 		<li><a href="/Home/AboutUs">About Us</a></li>
-		<li><a href="#">Categories</a></li>
+		<li><a href="/Home/Gallery">Gallery</a></li>
         <li><a href="/Home/ContactUs">Contact Us</a></li>
   </ul>
 </div>
+      	@model OnlineJobPortal.Models.User
 <div id="bodyPan">
   <div id="leftPan">
-  	<h2>what is <span>Opportunity.com</span></h2><br />
-	<p>Opportunity.com is Pakistan's leading jobs site. It help jobseekers in finding the jobs
-         of their own choice, while providing a unique platform for employers to advertise different 
-         career opportunities available in their organization and receive resumes from the potential candidates online.</p>
-	<p>Opportunity.com is a leading jobs site of Pakistan with over 23,000 employers and more than 1 million active and engaged web users.
-         High standards and special concerns about consumer's privacy entitled Mustakbil.com for the seal of certification by TRUSTe - world 
-        leader in consumer privacy protection. </p>
-   
-      @model OnlineJobPortal.Models.User
-    <div> @*id="leftblockonePan" align="right"*@
-        @using (Html.BeginForm("AddUser", "Account", FormMethod.Post))
+       @using (Html.BeginForm("AddUser", "Account", FormMethod.Post))
         {
            @Html.ValidationSummary(true)
           <br /><br /><br /><br /><br />
@@ -115,27 +106,19 @@
     </script>*@
   </div>
     </div>
-    </div>
 
 
 
   <div id="rightPan">
-  	<form action="/Home/VerifyUser" method="post" class="form1">
-		<h2>Member Login</h2>
-		<label>Email:</label>
-		<input name="Email" type="text" id="Email"/>
-		<label>Password:</label>
-		<input name="Password" type="password" id="Password"/><br />
-        <label>Type:</label> 
-        <p><select id="Type" name="Type">
-            <option id="none">please select</option>
-            <option value="User">User</option>
-            <option value="Company">Company</option>
-        </select></p>
-        <a href="/Account/SignUp"><label class="label1">If not member? SignUp</label></a>
-        <input name="GO" type="submit" class="botton" id="GO" value="Login" />
-		
+      <div id="rightform2Pan">
+          <form action="/Home/Search1" method="post" class="form2">
+		<h2>Search Here</h2>
+		<p><input name="search1" type="text" /></p>
+		<input name="search" type="submit"  class="search" id="search" value="SEARCH"/>
 	</form>
+	
+	</div>
+  	
       <br />
 	<div id="rightform4Pan">
 	    <h2>Top 5 jobs</h2> </div>
@@ -146,28 +129,19 @@
 		<li><a href="#">Network Administrator </a></li>
 		<li><a href="#">HR Manager </a></li>
 	</ul>
-	<div id="rightform2Pan">
-	<form action="" method="get" class="form2">
-		<h2>Search Here</h2>
-		<p><input name="search1" type="text" /></p>
-		<input name="search" type="submit"  class="search" id="search" value="SEARCH"/>
-	</form>
-	</div>
+	
   </div> <!-- bodypan div end-->
 <div id="bodyBottomPan">
   <div id="BottomLeftPan">
   	
   </div>
-  
-  <div id="BottomMiddlePan">
-  	
-  </div>
+ 
 </div>
 <div id="footerPan">
 	<ul>
 		<li><a href="#">Home </a>| </li>
 		<li><a href="#">About Us</a>| </li>
-		<li><a href="#">Categories</a>| </li>
+		<li><a href="#">Gallery</a>| </li>
 		<li><a href="#">Contact Us</a></li>
 		</ul>
 		<p class="copyright">©Opportunity. all right reserved.</p>
@@ -179,3 +153,12 @@
 </html>
 
  
+
+
+@*<h2>what is <span>Opportunity.com</span></h2><br />
+	<p>Opportunity.com is Pakistan's leading jobs site. It help jobseekers in finding the jobs
+         of their own choice, while providing a unique platform for employers to advertise different 
+         career opportunities available in their organization and receive resumes from the potential candidates online.</p>
+	<p>Opportunity.com is a leading jobs site of Pakistan with over 23,000 employers and more than 1 million active and engaged web users.
+         High standards and special concerns about consumer's privacy entitled Mustakbil.com for the seal of certification by TRUSTe - world 
+        leader in consumer privacy protection. </p>*@

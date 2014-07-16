@@ -7,7 +7,7 @@
 	<ul>
 		<li><a href="/User/Home">Home</a></li>
 		<li><a href="/Home/AboutUs">About Us</a></li>
-		<li><a href="/Home/Categories">Categories</a></li>
+		<li><a href="/Home/Gallery">Gallery</a></li>
         <li><a href="/Resume/ResumeManagement">Resume</a></li>
         <li><a href="/Home/ContactUs">Contact Us</a></li>
         <li><a href="/Account/Logout">Logout</a></li>
@@ -35,13 +35,15 @@
 @model OnlineJobPortal.Models.PersonalInfo
 <div id="leftPan">
 		<h2>Personal <span>Information</span></h2>
-          @using (Html.BeginForm("UpdateInfo", "Resume", FormMethod.Post))
-          {
+          <form action="/Resume/UpdateInfo" method="post" enctype="multipart/form-data">
                @Html.ValidationSummary(true)
              <br /><br /><br />
          @Html.HiddenFor(model => model.InfoID)      
          @Html.HiddenFor(model => model.UserId)
                <table border="0">
+                   <tr><td>@Html.LabelFor(model => model.ProfilePicture)</td>
+                      <td><input type="file" name="file" id="file"/></td>
+                      <td>@Html.ValidationMessageFor(model => model.ProfilePicture)</td></tr>
                    <tr><td>@Html.LabelFor(model => model.Name)</td>
                       <td>@Html.EditorFor(model => model.Name)</td>
                       <td>@Html.ValidationMessageFor(model => model.Name)</td></tr>
@@ -292,7 +294,7 @@
         <p>
             <input type="submit" value="Next" />
         </p>
-          }
+          </form>
 		
   </div>
  @section Footer{

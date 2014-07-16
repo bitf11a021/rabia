@@ -42,20 +42,20 @@
 	
 }
 @section search{
-     <div id="rightform2Pan">
+     @*<div id="rightform2Pan">
 	<form action="/Home/Search1" method="post" class="form2">
 		<h2>Search Here</h2>
 		<p><input name="search" type="text"/></p>
 		<input type="submit"  class="search" value="SEARCH"/>
-	</form>
-     @*<div id="rightform2Pan">
+	</form>*@
+     <div id="rightform2Pan">
 	<form action="/Home/Search" method="post" class="form2">
 		<h2>Search Here</h2>
 		<p><input name="search" type="text" id="search"/></p>
 		<input name="search" type="button"  class="search" id="b1" value="SEARCH"/>
-	</form>*@
+	</form>
 
-   <div id="result1"> </div>
+   
   @Scripts.Render("~/bundles/jquery")
     <script type="text/javascript">
 
@@ -66,7 +66,8 @@
 
                 alert('Text=' + search1);
                 $.getJSON("/Home/Search?search=" + search1, function (data) {
-                        alert("I am in JSON")
+                    //console.log("I am in JSON");
+                       alert("I am in JSON")
                         $('#result1').html('Search list: ' + "<br/>");
                         $.each(data, function (i, item) {
                             alert(item.JobName)
@@ -84,8 +85,8 @@
 } 
 
   <div id="leftPan">
-  	    <h3>@ViewBag.userid</h3>
-        <h3>@ViewBag.email</h3>
+  	    <!--<h3>@ViewBag.userid</h3>
+        <h3>@ViewBag.email</h3>-->
     <div id="leftblockonePan">
 		<h2>Categ<span>ories</span></h2><br />
 		<p><img src="~/Images/Accounting.jpg" title="accounting" alt="" width="100" height="58" border="0"/><h4><a href="/User/Accounting_Jobs">Accounting</a></h4></p>
@@ -105,7 +106,7 @@
       <div id="leftblocktwoPan">   
   </div>
   </div>
-         
+        <div id="result1"> </div> 
    @section Footer{
     <div id="footerPan">
 	<ul>
